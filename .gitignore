@@ -1,0 +1,16 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+
+# typescript
+next-env.d.ts
+
+# idea
+.idea
+
+# ivscode
+.vscode
+
+*.log
