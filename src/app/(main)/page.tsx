@@ -3,8 +3,6 @@
 import { WelcomePage } from '@/widgets/WelcomePage';
 
 const Page = () => {
-    return (
-        <WelcomePage />
-    )
-}
+  return <WelcomePage />;
+};
 export default Page;

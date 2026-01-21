@@ -15,7 +15,7 @@ const FooterStyled = styled.footer`
 `;
 
 const LinksBox = styled(Box)`
-    width: 80vh;
+  width: 80vh;
 `;
 
 const Footer: FC = (): ReactElement => {
