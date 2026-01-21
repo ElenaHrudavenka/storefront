@@ -25,7 +25,7 @@ const mockDataForProduct = [
       count: 259,
     },
   },
-    {
+  {
     id: 3,
     title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
     price: 109.95,
@@ -64,7 +64,7 @@ const mockDataForProduct = [
       count: 259,
     },
   },
-    {
+  {
     id: 6,
     title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
     price: 109.95,
@@ -90,7 +90,7 @@ const mockDataForProduct = [
       count: 259,
     },
   },
-     {
+  {
     id: 8,
     title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
     price: 109.95,

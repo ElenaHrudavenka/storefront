@@ -1,18 +1,19 @@
 import { ReactNode } from 'react';
 
+import { ClientProvider } from '@/app/providers/ClientProvider';
 import { PageWrapper } from '@/widgets/PageWrapper';
 
-const layout = ({ children }: { children: ReactNode }) => {
+const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en">
       <head></head>
       <body>
         <PageWrapper>
-          {children}
+          <ClientProvider>{children}</ClientProvider>
         </PageWrapper>
       </body>
     </html>
   );
 };
 
-export default layout;
+export default RootLayout;

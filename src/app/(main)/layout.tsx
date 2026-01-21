@@ -1,10 +1,10 @@
 'use client';
 
 import { FC, ReactNode } from 'react';
+import { styled } from 'styled-components';
 
 import { Footer } from '@/widgets/Footer';
 import { Header } from '@/widgets/Header';
-import { styled } from 'styled-components';
 
 const MainContainer = styled.main`
   min-height: 80vh;
@@ -15,9 +15,7 @@ const MainLayout: FC = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <Header />
-      <MainContainer>
-        {children}
-      </MainContainer>
+      <MainContainer>{children}</MainContainer>
       <Footer />
     </>
   );

@@ -1,26 +1,51 @@
 'use client';
 
-import { ProductCard } from '@/shared/ui/ProductCard';
+import { Grid, Typography } from '@mui/material';
 import { styled } from 'styled-components';
-import { mockDataForProduct } from './model/mocks';
-import { Grid } from '@mui/material';
+
+import { useGetProductsQuery } from '@/app/store/products/api/productsApiSlice';
+import { ProductCard } from '@/shared/ui/ProductCard';
+
+const CardsBlock = styled(Grid)`
+  display: flex;
+  justify-content: center;
+`;
 
 const CardBlock = styled(Grid)`
   display: flex;
   justify-content: center;
-`
+`;
+
 const Shop = () => {
-  return (
-      <Grid container spacing={2} justifyContent="center">
-        {
-          mockDataForProduct.map(card => (
-            <CardBlock key={card.id} size={{ xs: 12, sm: 6, md: 3 }}>
-              <ProductCard {...card} />
-            </CardBlock>
-          ))
-        }
+  const { data, error, isLoading } = useGetProductsQuery(18);
+
+  if (isLoading) {
+    return (
+      <Grid container justifyContent="center">
+        <Typography>Loading...</Typography>
       </Grid>
-  )
+    );
+  }
+
+  if (error) {
+    return (
+      <Grid container justifyContent="center">
+        <Typography color="red">Error...</Typography>
+      </Grid>
+    );
+  }
+
+  return (
+    <Grid container spacing={3} justifyContent="center">
+      {
+        data.map((product) => (
+          <CardBlock key={product.id} size={{ xs: 12, sm: 4, md: 2 }}>
+            <ProductCard {...product} />
+          </CardBlock>
+        ))
+      }
+    </Grid>
+  );
 };
 
 export { Shop };
